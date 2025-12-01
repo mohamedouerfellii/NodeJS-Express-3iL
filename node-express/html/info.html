@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Express</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <h1>Express - Info</h1>
+    <h2>Form GET</h2>
+    <form action="/data" method="GET">
+        <label for="message_get">Message : </label>
+        <input type="text" name="message_get" id="message_get" placeholder="Entrez votre message">
+        <button type="submit">Envoyer</button>
+    </form>
+    <h2>Form POST</h2>
+    <form action="/data" method="POST">
+        <label for="message">Message : </label>
+        <input type="text" name="message" id="message" placeholder="Entrez votre message">
+        <button type="submit">Envoyer</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<h2>{{title}}</h2>
+<ul>
+    {{#each languages}}
+        <li>
+        <p>Langage : {{name}} {{#commentsCount this}}{{/commentsCount}}</p>
+            {{>comments-block comments}}
+        </li>
+    {{/each}}
+</ul>
