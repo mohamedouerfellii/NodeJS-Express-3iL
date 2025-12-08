@@ -10,5 +10,7 @@ const ProfSchema = new mongoose.Schema({
     Office: Number
 });
 
+
+
 module.exports = mongoose.model(
     'prof', ProfSchema, 'Professors');

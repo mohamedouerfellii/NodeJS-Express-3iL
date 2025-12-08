@@ -3,9 +3,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const path = require('path');
 const rfs = require('rotating-file-stream');
-
-const mongoose = require('mongoose');
-const ProfModel = require('./schema/ProfsSchema');
+const profsRouter = require('./routers/profsRouter').router;
 
 const expressOasGenerator = require('express-oas-generator');
 
@@ -22,27 +20,7 @@ const accessLogStream = rfs.createStream('access.log', {
 });
 app.use(morgan('combined', {stream: accessLogStream}));
 
-mongoose.connect('mongodb://127.0.0.1:27017/profs-db')
-    .then(() => console.log('Connected to mongo db!'));
-
-console.log("Create prof");
-const newProf = new ProfModel({
-    LastName: "Ouerfelli", FirstName: "Mohamed", Office: 10
-});
-
-newProf.save().then(() => {
-    console.log("Created")
-});
-
-ProfModel.find().exec().then(result => {
-    console.log(result)
-});
-console.log("Delete prof");
-ProfModel.findByIdAndDelete('692f0551db4eb730a87d22b6').exec();
-
-ProfModel.find().exec().then(result => {
-    console.log(result)
-});
+app.use('/api/v1', profsRouter);
 
 app.get("/", function (req, res) {
     res.send("API REST avec Express");
