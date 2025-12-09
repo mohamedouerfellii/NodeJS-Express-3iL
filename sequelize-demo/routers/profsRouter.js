@@ -10,6 +10,8 @@ function buildRoutes() {
     router.route('/profs/:id').delete(profsController.deleteById);
     router.route('/profs/').put(profsController.update);
 
+    router.route('/auth').post(profsController.login);
+
     return router;
 }
 

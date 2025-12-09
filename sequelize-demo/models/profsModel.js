@@ -8,6 +8,9 @@ module.exports = (sequelize, DataTypes) => {
         },
         bureau:{
             type: DataTypes.INTEGER,
+        },
+        password:{
+            type: DataTypes.STRING,
         }
     })
 }
