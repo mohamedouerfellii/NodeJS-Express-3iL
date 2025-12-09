@@ -12,12 +12,13 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "mysql2": "^3.15.3",
-    "sequelize": "^6.37.7",
     "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-oas-generator": "^1.0.41",
     "morgan": "^1.10.1",
-    "rotating-file-stream": "^3.2.7"
+    "mysql2": "^3.15.3",
+    "rotating-file-stream": "^3.2.7",
+    "sequelize": "^6.37.7"
   }
 }
