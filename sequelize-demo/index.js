@@ -12,7 +12,7 @@ const expressOasGenerator = require('express-oas-generator');
 const app = express();
 
 expressOasGenerator.handleResponses(app, {});
-let whiteList = ['http://127.0.0.1:8090'];
+let whiteList = ['http://localhost:3000'];
 let corsOptions = {
     origin : function (req, callback) {
         if(whiteList.indexOf(req) !== -1) {
